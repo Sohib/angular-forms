@@ -1,0 +1,22 @@
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="/assets/logo2.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Demo Form: SKU With Form Bulider</h5>
+    <form novalidate  [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+
+      <div class="form-group">
+        <label for="skuInput">SKU</label>
+        <input type="text" [class.is-invalid]="!myForm.controls['sku'].valid && myForm.controls['sku'].touched" class="form-control" name=sku id=skuInput placeholder="SKU" [formControl]="myForm.controls['sku']">
+        <div class="invalid-feedback">
+          <div *ngIf="myForm.controls['sku'].hasError('required')">
+          Please this feild is required
+          </div>
+          <div *ngIf="myForm.controls['sku'].hasError('invalidSku')">
+            Sku must begin with 123
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-block btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

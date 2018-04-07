@@ -1,0 +1,17 @@
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="/assets/logo2.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Demo Form: 2 way data binding NgModule</h5>
+    <div *ngIf="productName != null" class="alert alert-primary"> {{ productName }}</div>
+    <form novalidate [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+
+      <div class="form-group">
+        <label for="productNameInput">Product Name</label>
+        <input name="productName" type="text" class="form-control" id=productNameInput placeholder="Product Name" [formControl]="myForm.get('productName')"
+         [(ngModel)]="productName">
+
+      </div>
+      <button type="submit" class="btn btn-block btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

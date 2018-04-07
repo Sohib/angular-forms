@@ -1,0 +1,13 @@
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="/assets/logo2.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Demo Form: SKU</h5>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+      <div class="form-group">
+        <label for="skuInput">SKU</label>
+        <input type="text" class="form-control" name=sku id=skuInput placeholder="SKU" ngModel>
+      </div>
+      <button type="submit" class="btn btn-block btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
